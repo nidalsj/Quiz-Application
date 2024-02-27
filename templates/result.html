@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Result Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        .result-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .result-text {
+            font-size: 50px;
+            text-align: center;
+            background: linear-gradient(to right, rgba(63, 94, 251, 1), rgba(252, 70, 107, 1));
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bolder;
+        }
+
+        .score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .category-difficulty {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .restart-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+            transition: 0.5s ease;
+            text-decoration: none;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="result-container">
+        <h1 class="result-text">Congratulations, {{ quiz_instance.candidate_name }}!</h1>
+        <div class="score">You Scored {{ quiz_instance.score }} out of 10</div>
+        <div class="category-difficulty">Category: {{ quiz_instance.category.name }} | Difficulty Level: {{
+            quiz_instance.difficulty }}</div>
+        <a href="{% url 'home' %}" class="restart-btn">Play Again</a>
+    </div>
+</body>
+
+
+</html>
