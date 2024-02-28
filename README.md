@@ -14,3 +14,7 @@ Quiz App Based on Category and difficulty level
 
 - Python 3.x
 - Django
+
+## Note
+
+This project is currently in the building stage. and I am actively working on plans to integrate personalized profiles, leaderboards, time limits, and more quiz categories to elevate the overall user experience.
